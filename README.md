@@ -1,16 +1,14 @@
-# portfolio
+# portfolio windows xp
+Access the web version at https://silly-poincare-e2104e.netlify.app/
+## In Web
+<img src ="https://user-images.githubusercontent.com/50497092/119133095-e38fe200-ba11-11eb-9a3f-c389f77203f5.png" height="300px"/>
 
-A new Flutter project.
+## In Mobile 
+<img src="https://user-images.githubusercontent.com/50497092/119133189-002c1a00-ba12-11eb-9288-27e3fbcf6715.png" height="500px"/>
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Run with **flutter run -d chrome --web-renderer html**
+build with **flutter build web --web-renderer html --release**
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.

@@ -12,9 +12,9 @@ class HomePage extends StatelessWidget {
           Container(
             decoration: BoxDecoration(
               image: DecorationImage(
-                  image: NetworkImage(
-                      "https://wallpapercave.com/wp/wp2754864.jpg"),
-                  fit: BoxFit.cover),
+                image: AssetImage("assets/background.jpg"),
+                fit: BoxFit.cover,
+              ),
             ),
           ),
           Programs(),

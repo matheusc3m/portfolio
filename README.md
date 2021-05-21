@@ -9,6 +9,7 @@ Access the web version at https://silly-poincare-e2104e.netlify.app/
 ## Getting Started
 
 Run with **flutter run -d chrome --web-renderer html**
-build with **flutter build web --web-renderer html --release**
+<br>
+Build with **flutter build web --web-renderer html --release**
 
 

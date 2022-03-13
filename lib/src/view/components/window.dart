@@ -1,23 +1,20 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:portfolio/src/view/shared/touchable_opacity.dart';
 
 class Window {
   final BuildContext context;
   final Widget body;
-  final Function builder;
+  final Function? builder;
 
-  Function removeOverlay;
-  OverlayEntry overlay, overlayBackground;
+  Function? removeOverlay;
+  OverlayEntry? overlay, overlayBackground;
 
-  Window({@required this.context, @required this.body, this.builder}) {
-    assert(
-        (body != null && builder == null) || (body == null && builder != null));
+  Window({required this.context, required this.body, this.builder}) {
     removeOverlay = () {
-      overlayBackground.remove();
-      overlay.remove();
+      overlayBackground!.remove();
+      overlay!.remove();
     };
+
     overlay = OverlayEntry(
       builder: (context) => Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -49,7 +46,7 @@ class Window {
                 TouchableOpacity(
                   child: Image.asset("assets/close.png"),
                   onTap: () {
-                    overlay.remove();
+                    overlay!.remove();
                   },
                 ),
                 SizedBox(
@@ -76,6 +73,6 @@ class Window {
   }
 
   void buildOverlay(BuildContext context) {
-    Overlay.of(context).insertAll([overlay]);
+    Overlay.of(context)!.insertAll([overlay!]);
   }
 }

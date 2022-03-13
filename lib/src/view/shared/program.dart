@@ -7,10 +7,10 @@ class Program extends StatefulWidget {
   final Color titleColor;
   final Function onTap;
   Program(
-      {@required this.image,
-      @required this.title,
-      @required this.onTap,
-      @required this.titleColor});
+      {required this.image,
+      required this.title,
+      required this.onTap,
+      required this.titleColor});
   @override
   _ProgramState createState() => _ProgramState();
 }

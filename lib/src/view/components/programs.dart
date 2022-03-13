@@ -19,7 +19,9 @@ class Programs extends StatelessWidget {
                     titleColor: Colors.black,
                     title: "Star Wars App",
                     onTap: () {
-                      String url = "https://github.com/matheusc3m/starwars";
+                      String url =
+                          "https://matheusc3m.github.io/gitsearchuser/";
+
                       html.window.open(url, 'new tab');
                     },
                     image: "assets/starwars.png",

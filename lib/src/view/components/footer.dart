@@ -72,8 +72,8 @@ class _FooterState extends State<Footer> {
               SizedBox(
                 width: 10,
               ),
-              Image.network(
-                "https://icon-library.com/images/windows-start-button-icon-download/windows-start-button-icon-download-19.jpg",
+              Image.asset(
+                "assets/windows_logo.jpeg",
                 height: 35,
                 width: 35,
               ),

@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/src/helpers.dart/howl_audio.dart';
+import 'package:portfolio/src/view/components/media_player.dart';
+import 'package:portfolio/src/view/components/my_portfolio.dart';
 import 'package:portfolio/src/view/components/window.dart';
 import 'package:portfolio/src/view/shared/program.dart';
 import 'dart:html' as html;
@@ -13,30 +16,7 @@ class Programs extends StatelessWidget {
           onTap: () {
             return Window(
               context: context,
-              body: Row(
-                children: [
-                  Program(
-                    titleColor: Colors.black,
-                    title: "Star Wars App",
-                    onTap: () {
-                      String url =
-                          "https://matheusc3m.github.io/gitsearchuser/";
-
-                      html.window.open(url, 'new tab');
-                    },
-                    image: "assets/starwars.png",
-                  ),
-                  Program(
-                    titleColor: Colors.black,
-                    title: "Music Player",
-                    onTap: () {
-                      String url = "https://github.com/matheusc3m/musicplayer";
-                      html.window.open(url, 'new tab');
-                    },
-                    image: "assets/music.png",
-                  )
-                ],
-              ),
+              body: MyPortfolio(),
             );
           },
           title: "My portfolio",
@@ -59,7 +39,24 @@ class Programs extends StatelessWidget {
             html.window.open(url, 'new tab');
           },
           image: "assets/github.png",
-        )
+        ),
+        Program(
+          titleColor: Colors.white,
+          title: "Numb",
+          onTap: () {
+            return Window(
+              onClose: () {
+                stopAudio();
+              },
+              height: 490,
+              width: 400,
+              padding: EdgeInsets.zero,
+              context: context,
+              body: MediaPlayer(),
+            );
+          },
+          image: "assets/music.png",
+        ),
       ],
     );
   }

@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/src/view/shared/touchable_opacity.dart';
 
 class Program extends StatefulWidget {
-  final String image;
-  final String title;
-  final Color titleColor;
-  final Function onTap;
+  final String? image;
+  final String? title;
+  final Color? titleColor;
+  final Function? onTap;
   Program(
       {required this.image,
       required this.title,
@@ -42,12 +42,12 @@ class _ProgramState extends State<Program> {
             child: Column(
               children: [
                 Image.asset(
-                  widget.image,
+                  widget.image!,
                   height: 50,
                   width: 50,
                 ),
                 Text(
-                  widget.title,
+                  widget.title!,
                   style: TextStyle(
                     color: widget.titleColor,
                     shadows: <Shadow>[

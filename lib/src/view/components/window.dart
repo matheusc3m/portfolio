@@ -5,11 +5,24 @@ class Window {
   final BuildContext context;
   final Widget body;
   final Function? builder;
+  final Function? onClose;
+
+  final EdgeInsetsGeometry? padding;
+  final double? height;
+  final double? width;
 
   Function? removeOverlay;
   OverlayEntry? overlay, overlayBackground;
 
-  Window({required this.context, required this.body, this.builder}) {
+  Window({
+    required this.context,
+    required this.body,
+    this.onClose,
+    this.builder,
+    this.padding,
+    this.height,
+    this.width,
+  }) {
     removeOverlay = () {
       overlayBackground!.remove();
       overlay!.remove();
@@ -21,7 +34,7 @@ class Window {
         children: [
           Container(
             height: 30,
-            width: 500,
+            width: width ?? 500,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(8), topRight: Radius.circular(8)),
@@ -46,6 +59,9 @@ class Window {
                 TouchableOpacity(
                   child: Image.asset("assets/close.png"),
                   onTap: () {
+                    if (onClose != null) {
+                      onClose!.call();
+                    }
                     overlay!.remove();
                   },
                 ),
@@ -56,9 +72,9 @@ class Window {
             ),
           ),
           Container(
-            padding: EdgeInsets.all(20),
-            height: 500,
-            width: 500,
+            padding: padding ?? EdgeInsets.all(20),
+            height: height ?? 500,
+            width: width ?? 500,
             decoration: BoxDecoration(
               border: Border.all(color: Color(0xFF5551FF), width: 3),
               color: Colors.white,
